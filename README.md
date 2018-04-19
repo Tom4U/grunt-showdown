@@ -62,7 +62,7 @@ Default value: `{}`
 
 This is the default showdown.js options object. Please have look at the showdown.js [Wiki](https://github.com/showdownjs/showdown/wiki/Showdown-options)
 
-At the time of writing this are the default values:
+At the time of writing these are the default values:
 
 ```javascript
 { 
@@ -112,20 +112,21 @@ In this example, the default options are used to convert markdown document with 
 ```js
 grunt.initConfig({
   showdown: {
-    options: {
-        showdown: {
-          tables: true,
-          strikethrough: true,
-          ghCompatibleHeaderId: true,
-        }
-    },
-    files: [
-        {
-            cwd: 'src/md',
-            src: ['**/*.md'],
-            dest: 'dist/'
-        }
-    ],
+    target: {
+      options: {
+          showdown: {
+            tables: true,
+            strikethrough: true,
+            ghCompatibleHeaderId: true,
+          }
+      },
+      files: [
+          {
+              cwd: 'src/md',
+              src: ['**/*.md'],
+              dest: 'dist'
+          }
+    ],}
   },
 });
 ```
@@ -137,16 +138,18 @@ plus a custom extension `showdown-furigana-extension`.
 ```js
 grunt.initConfig({
   showdown: {
-    options: {
-        customExtensions: ['showdown-furigana-extension']
-    },
-    files: [
-        {
-            cwd: 'src/md',
-            src: ['**/*.md'],
-            dest: 'dist/'
-        }
-    ],
+    target: {
+        options: {
+            customExtensions: ['showdown-furigana-extension']
+        },
+        files: [
+            {
+                cwd: 'src/md',
+                src: ['**/*.md'],
+                dest: 'dist/'
+            }
+        ],
+    }      
   },
 });
 ```
